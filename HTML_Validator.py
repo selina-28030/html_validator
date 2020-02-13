@@ -37,9 +37,9 @@ def validate_html(html):
 
 def get_first_tag(html):
 	start = html.index('<')
-    	end = html.index('>')+1
-    	tag = html[start:end]
-    	return tag
+	end = html.index('>')+1
+	tag = html[start:end]
+	return tag
 
 
 def _extract_tags(html):
