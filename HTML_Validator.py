@@ -11,21 +11,21 @@ def validate_html(html):
     	'''
 	string = _extract_tags(html)
 	s = []
-	balanced = TRUE
+	balanced = True
 	for tag in string:
 		if "/" not in tag:
 			s.append(tag)
 		else:
 			if s == []:
-				balanced = FALSE
+				balanced = False
 			else:
 				top = s.pop()
 				if top[1:] != tag[2:]:
 					return FALSE
 	if balanced and s == []:
-		return TRUE
+		return True
 	else:
-		return FALSE
+		return False
 
 
 # HINT:
