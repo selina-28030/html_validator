@@ -56,7 +56,7 @@ def _extract_tags(html):
 	if '<' not in html:
 		return []
 	else:
-		return [get_first_tag(html)]+get_tags(html[html.index('>')+1:])
+		return [get_first_tag(html)]+ _extract_tags(html[html.index('>')+1:])
     
 
 
