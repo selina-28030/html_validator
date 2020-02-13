@@ -53,9 +53,10 @@ def _extract_tags(html):
     	>>> _extract_tags('Python <strong>rocks</strong>!')
     	['<strong>', '</strong>']
     	'''
-    	if '<' not in html:
-        	return []
-    	else:
-        	return [get_first_tag(html)]+get_tags(html[html.index('>')+1:])
+	if '<' not in html:
+		return []
+	else:
+		return [get_first_tag(html)]+get_tags(html[html.index('>')+1:])
     
+
 
