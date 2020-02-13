@@ -21,7 +21,7 @@ def validate_html(html):
 			else:
 				top = s.pop()
 				if top[1:] != tag[2:]:
-					return FALSE
+					return False
 	if balanced and s == []:
 		return True
 	else:
