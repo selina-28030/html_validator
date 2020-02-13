@@ -2,6 +2,13 @@
 
 
 def validate_html(html):
+	'''
+    	This function performs a limited version of html validation by checking whether every opening tag has a corresponding closing tag.
+    	>>> validate_html('<strong>example</strong>')
+    	True
+    	>>> validate_html('<strong>example')
+    	False
+    	'''
 	string = _extract_tags(html)
 	s = []
 	balanced = TRUE
@@ -19,16 +26,9 @@ def validate_html(html):
 		return TRUE
 	else:
 		return FALSE
-    	'''
-    	This function performs a limited version of html validation by checking whether every opening tag has a corresponding closing tag.
 
-    	>>> validate_html('<strong>example</strong>')
-    	True
-    	>>> validate_html('<strong>example')
-    	False
-    	'''
 
-    	# HINT:
+# HINT:
     	# use the _extract_tags function below to generate a list of html tags without any extra text;
     	# then process these html tags using the balanced parentheses algorithm from the book
     	# the main difference between your code and the book's code will be that you will have to keep track of not just the 3 types of parentheses,
@@ -43,12 +43,7 @@ def get_first_tag(html):
 
 
 def _extract_tags(html):
-    	if '<' not in html:
-        	return []
-    	else:
-        	return [get_first_tag(html)]+get_tags(html[html.index('>')+1:])
-    
-    	'''
+	'''
     	This is a helper function for `validate_html`.
     	By convention in Python, helper functions that are not meant to be used directly by the user are prefixed with an underscore.
 
@@ -58,3 +53,9 @@ def _extract_tags(html):
     	>>> _extract_tags('Python <strong>rocks</strong>!')
     	['<strong>', '</strong>']
     	'''
+    	if '<' not in html:
+        	return []
+    	else:
+        	return [get_first_tag(html)]+get_tags(html[html.index('>')+1:])
+    
+
