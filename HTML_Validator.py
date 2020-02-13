@@ -2,19 +2,19 @@
 
 
 def validate_html(html):
-    string = _extract_tags(html)
-    s = []
-    balanced = TRUE
-    for tag in string:
-	if "/" not in tag:
-		s.append(tag)
-	else:
-		if s == []:
-			balanced = FALSE
+	string = _extract_tags(html)
+	s = []
+	balanced = TRUE
+	for tag in string:
+		if "/" not in tag:
+			s.append(tag)
 		else:
-			top = s.pop()
-			if top[1:] != tag[2:]:
-				return FALSE
+			if s == []:
+				balanced = FALSE
+			else:
+				top = s.pop()
+				if top[1:] != tag[2:]:
+					return FALSE
 	if balanced = TRUE and s == []:
 		return TRUE
 	else:
